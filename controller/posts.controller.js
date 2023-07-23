@@ -21,9 +21,7 @@ const postsController = {
         "select * from posts where id = ?",
         [id]
       );
-      res.json({
-        data: rows,
-      });
+      res.json(rows);
     } catch (error) {
       console.log(error);
       res.json({
@@ -40,7 +38,7 @@ const postsController = {
       //   data: rows,
       // });
 
-      res.json(rows)
+      res.json(rows);
     } catch (error) {
       console.log(error);
       res.json({
@@ -54,9 +52,7 @@ const postsController = {
       const { id } = req.params;
       const sql = "update posts set title = ?, content = ? where id = ?";
       const [rows, fields] = await pool.query(sql, [title, content, id]);
-      res.json({
-        data: rows,
-      });
+      res.json(rows);
     } catch (error) {
       console.log(error);
       res.json({
@@ -71,9 +67,7 @@ const postsController = {
         "delete from posts where id = ?",
         [id]
       );
-      res.json({
-        data: rows,
-      });
+      res.json(rows);
     } catch (error) {
       console.log(error);
       res.json({
