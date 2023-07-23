@@ -36,9 +36,11 @@ const postsController = {
       const { title, content } = req.body;
       const sql = "insert into posts (title, content) values (?, ?)";
       const [rows, fields] = await pool.query(sql, [title, content]);
-      res.json({
-        data: rows,
-      });
+      // res.json({
+      //   data: rows,
+      // });
+
+      res.json(rows)
     } catch (error) {
       console.log(error);
       res.json({
