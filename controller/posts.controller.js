@@ -52,6 +52,7 @@ const postsController = {
       const { id } = req.params;
       const sql = "update posts set title = ?, content = ? where id = ?";
       const [rows, fields] = await pool.query(sql, [title, content, id]);
+
       res.json(rows);
     } catch (error) {
       console.log(error);

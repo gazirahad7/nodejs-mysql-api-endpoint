@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
+const morgan = require("morgan");
 
 require("dotenv").config();
 
@@ -10,7 +11,7 @@ app.use(express.json());
 const postsRouter = require("./routes/posts.router");
 const authRouter = require("./routes/auth.router");
 app.use(cors());
-
+app.use(morgan("dev"));
 app.get("/test", (req, res) => {
   res.send("API is working...");
 });
