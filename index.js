@@ -9,7 +9,7 @@ app.use(express.json());
 
 const postsRouter = require("./routes/posts.router");
 const authRouter = require("./routes/auth.router");
-app.use(cors());
+// app.use(cors());
 
 app.get("/test", (req, res) => {
   res.send("API is working...");
