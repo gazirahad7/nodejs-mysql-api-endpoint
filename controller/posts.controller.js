@@ -3,9 +3,10 @@ const postsController = {
     getAll: async (req, res) => {
         try {
             const [rows, fields] = await pool.query("select * from posts")
-            res.json({
-                data: rows
-            })
+            // res.json({
+            //     data: rows
+            // })
+            res.json(rows)
         } catch (error) {
             console.log(error)
             res.json({
